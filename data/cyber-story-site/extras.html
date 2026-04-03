@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extras | Neon Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="extras">
+  <div class="noise"></div>
+  <div class="grid"></div>
+
+  <div id="passwordOverlay" class="password-overlay hidden">
+    <div class="password-card panel">
+      <p class="eyebrow">PRIVATE ACCESS</p>
+      <h1>Restricted Transmission</h1>
+      <p class="muted">Enter the shared password to access the archive.</p>
+      <form id="passwordForm" class="password-form">
+        <input id="passwordInput" type="password" placeholder="Enter password" autocomplete="current-password" />
+        <button type="submit" class="btn btn-primary">Unlock</button>
+      </form>
+      <p id="passwordMessage" class="form-message"></p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">Neon Archive</a>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="extras.html" class="nav-link active">Extras</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel content-panel">
+      <p class="eyebrow">EXTRAS</p>
+      <h1>Signal Fragments</h1>
+      <p class="muted">
+        This page is ready for character art, playlists, world notes, fake dossiers,
+        or any bonus material you want to add later.
+      </p>
+
+      <div class="extras-grid">
+        <article class="extra-card">
+          <h2>Character Files</h2>
+          <p>Drop in character art, bios, or relationship notes once you have them.</p>
+        </article>
+        <article class="extra-card">
+          <h2>World Notes</h2>
+          <p>Explain tech, magic systems, locations, factions, or archived lore snippets.</p>
+        </article>
+        <article class="extra-card">
+          <h2>Playlists / Inspiration</h2>
+          <p>Add music links, moodboards, or snippets that match the story atmosphere.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>More artifacts incoming.</p>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

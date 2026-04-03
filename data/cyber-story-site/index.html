@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+  <div class="noise"></div>
+  <div class="grid"></div>
+
+  <div id="passwordOverlay" class="password-overlay hidden">
+    <div class="password-card panel">
+      <p class="eyebrow">PRIVATE ACCESS</p>
+      <h1>Restricted Transmission</h1>
+      <p class="muted">Enter the shared password to access the archive.</p>
+      <form id="passwordForm" class="password-form">
+        <input id="passwordInput" type="password" placeholder="Enter password" autocomplete="current-password" />
+        <button type="submit" class="btn btn-primary">Unlock</button>
+      </form>
+      <p id="passwordMessage" class="form-message"></p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">Neon Archive</a>
+    <nav>
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="extras.html" class="nav-link">Extras</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero panel">
+      <p class="eyebrow">DARK SCI-FI / CYBERPUNK / ARCANE SIGNAL</p>
+      <h1>A story archive built for weekly transmissions.</h1>
+      <p class="hero-copy">
+        Every chapter opens on Saturday. Step into the signal, follow the fragments,
+        and unlock the next transmission as it goes live.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#chapters">Read Chapters</a>
+        <a class="btn btn-secondary" href="extras.html">View Extras</a>
+      </div>
+    </section>
+
+    <section class="countdown panel">
+      <div>
+        <p class="eyebrow">COUNTDOWN</p>
+        <h2 id="countdownLabel">Next transmission in...</h2>
+      </div>
+      <div id="countdown" class="countdown-grid">
+        <div><span id="days">00</span><small>Days</small></div>
+        <div><span id="hours">00</span><small>Hours</small></div>
+        <div><span id="minutes">00</span><small>Minutes</small></div>
+        <div><span id="seconds">00</span><small>Seconds</small></div>
+      </div>
+    </section>
+
+    <section id="chapters" class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ARCHIVE</p>
+          <h2>Chapter Index</h2>
+        </div>
+        <p class="muted">Released chapters glow. Future chapters stay locked.</p>
+      </div>
+
+      <div id="chapterList" class="chapter-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built for serialized story drops every Saturday.</p>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
