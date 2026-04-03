@@ -11,34 +11,34 @@
   }
 
   function setPasswordGate() {
-    const overlay = document.getElementById('passwordOverlay');
-    const form = document.getElementById('passwordForm');
-    const input = document.getElementById('passwordInput');
-    const message = document.getElementById('passwordMessage');
+  const overlay = document.getElementById('passwordOverlay');
+  const form = document.getElementById('passwordForm');
+  const input = document.getElementById('passwordInput');
+  const message = document.getElementById('passwordMessage');
 
-    if (!overlay || !form || !input) return;
+  if (!overlay || !form || !input) return;
 
-    const expected = config.password || '';
-    const unlocked = localStorage.getItem('story-site-unlocked') === expected;
+  const expected = config.password || '';
+  const unlocked = sessionStorage.getItem('story-site-unlocked') === expected;
 
-    if (!expected || unlocked) {
-      overlay.classList.add('hidden');
-      return;
-    }
-
-    overlay.classList.remove('hidden');
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (input.value === expected) {
-        localStorage.setItem('story-site-unlocked', expected);
-        overlay.classList.add('hidden');
-        message.textContent = '';
-      } else {
-        message.textContent = 'Wrong password. Try again.';
-      }
-    });
+  if (!expected || unlocked) {
+    overlay.classList.add('hidden');
+    return;
   }
+
+  overlay.classList.remove('hidden');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (input.value === expected) {
+      sessionStorage.setItem('story-site-unlocked', expected);
+      overlay.classList.add('hidden');
+      message.textContent = '';
+    } else {
+      message.textContent = 'Wrong password. Try again.';
+    }
+  });
+}
 
   function getChapterStatus(chapter) {
     const releasedByDate = new Date(chapter.releaseDate).getTime() <= Date.now();

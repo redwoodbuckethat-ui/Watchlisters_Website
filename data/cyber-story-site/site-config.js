@@ -14,25 +14,25 @@ window.SITE_CONFIG = {
       number: 0,
       title: 'Enforcement Report',
       file: 'chapters/chapter-1.html',
-      releaseDate: '2026-04-04T12:00:00-04:00',
+      releaseDate: '2026-04-04T04:00:00Z',
       excerpt: 'An official log of major incidents across Power City.',
       published: false
     },
     {
       id: 'chapter-1',
       number: 1,
-      title: 'Future chapter title',
+      title: 'RESTRICTED',
       file: 'chapters/chapter-2.html',
-      releaseDate: '2026-04-04T12:00:00-04:00',
+      releaseDate: '2026-04-04T04:00:00Z',
       excerpt: 'Locked until release.',
       published: false
     },
     {
-      id: 'chapter-3',
-      number: 3,
-      title: 'Future chapter title',
+      id: 'chapter-2',
+      number: 2d,
+      title: 'RESTRICTED',
       file: 'chapters/chapter-3.html',
-      releaseDate: '2026-04-18T12:00:00-04:00',
+      releaseDate: '2026-04-011T04:00:00Z',
       excerpt: 'Locked until release.',
       published: false
     }
