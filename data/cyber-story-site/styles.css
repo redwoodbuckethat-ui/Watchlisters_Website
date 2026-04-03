@@ -376,12 +376,11 @@ textarea:focus {
 }
 
 .redacted {
-  display: inline-block;
   background: white;
   color: white;
   padding: 0 0.35em;
   border-radius: 2px;
-  user-select: none;
+  box-shadow: 0 0 6px rgba(255,255,255,0.5);
 }
 
 .story-text {

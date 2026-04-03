@@ -10,12 +10,12 @@ window.SITE_CONFIG = {
   supabaseAnonKey: 'sb_publishable_QudfAhssKMdUofPNSGQ0Gg_CbdaGEAa',
   chapters: [
     {
-      id: 'chapter-1',
-      number: 1,
-      title: 'Replace this with your first chapter title',
+      id: 'chapter-0',
+      number: 0,
+      title: 'Enforcement Report',
       file: 'chapters/chapter-1.html',
       releaseDate: '2026-04-04T12:00:00-04:00',
-      excerpt: 'The archive is open. Replace this text with a short teaser.',
+      excerpt: 'An official log of major incidents across Power City.',
       published: true
     },
     {
