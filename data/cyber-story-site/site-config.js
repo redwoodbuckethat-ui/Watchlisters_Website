@@ -16,14 +16,14 @@ window.SITE_CONFIG = {
       file: 'chapters/chapter-1.html',
       releaseDate: '2026-04-04T12:00:00-04:00',
       excerpt: 'An official log of major incidents across Power City.',
-      published: true
+      published: false
     },
     {
-      id: 'chapter-2',
-      number: 2,
+      id: 'chapter-1',
+      number: 1,
       title: 'Future chapter title',
       file: 'chapters/chapter-2.html',
-      releaseDate: '2026-04-11T12:00:00-04:00',
+      releaseDate: '2026-04-04T12:00:00-04:00',
       excerpt: 'Locked until release.',
       published: false
     },
