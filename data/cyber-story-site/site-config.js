@@ -3,7 +3,7 @@ window.SITE_CONFIG = {
   password: 'Watchlisters',
   countdownLabel: 'Next chapter in...',
   releaseDay: 6,
-  releaseHour: 12,
+  releaseHour: 0,
   releaseMinute: 0,
   timezone: 'America/New_York',
   supabaseUrl: 'https://zrdkpipysshmxqeidggy.supabase.co',
@@ -29,10 +29,10 @@ window.SITE_CONFIG = {
     },
     {
       id: 'chapter-2',
-      number: 2d,
+      number: 2,
       title: 'RESTRICTED',
       file: 'chapters/chapter-3.html',
-      releaseDate: '2026-04-011T04:00:00Z',
+      releaseDate: '2026-04-11T04:00:00Z',
       excerpt: 'Locked until release.',
       published: false
     }
