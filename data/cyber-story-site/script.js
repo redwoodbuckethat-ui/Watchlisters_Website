@@ -108,33 +108,38 @@
     }
   }
 
-  function updateCountdown() {
-    const ids = ['days', 'hours', 'minutes', 'seconds'];
-    if (!ids.every((id) => document.getElementById(id))) return;
+ function updateCountdown() {
+  const ids = ['days', 'hours', 'minutes', 'seconds'];
+  if (!ids.every((id) => document.getElementById(id))) return;
 
-    const now = new Date();
-    const next = new Date(now);
-    const releaseDay = Number.isInteger(config.releaseDay) ? config.releaseDay : 6;
-    const releaseHour = Number.isInteger(config.releaseHour) ? config.releaseHour : 12;
-    const releaseMinute = Number.isInteger(config.releaseMinute) ? config.releaseMinute : 0;
-    const diff = (releaseDay - now.getDay() + 7) % 7;
+  const upcoming = (config.chapters || [])
+    .map((chapter) => ({
+      ...chapter,
+      releaseTime: new Date(chapter.releaseDate).getTime()
+    }))
+    .filter((chapter) => !Number.isNaN(chapter.releaseTime) && chapter.releaseTime > Date.now())
+    .sort((a, b) => a.releaseTime - b.releaseTime)[0];
 
-    next.setDate(now.getDate() + diff);
-    next.setHours(releaseHour, releaseMinute, 0, 0);
-    if (next <= now) next.setDate(next.getDate() + 7);
-
-    const remaining = next - now;
-    const seconds = Math.floor(remaining / 1000);
-    const days = Math.floor(seconds / (60 * 60 * 24));
-    const hours = Math.floor((seconds % (60 * 60 * 24)) / (60 * 60));
-    const minutes = Math.floor((seconds % (60 * 60)) / 60);
-    const secs = seconds % 60;
-
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(secs).padStart(2, '0');
+  if (!upcoming) {
+    document.getElementById('days').textContent = '00';
+    document.getElementById('hours').textContent = '00';
+    document.getElementById('minutes').textContent = '00';
+    document.getElementById('seconds').textContent = '00';
+    return;
   }
+
+  const remaining = upcoming.releaseTime - Date.now();
+  const seconds = Math.floor(remaining / 1000);
+  const days = Math.floor(seconds / (60 * 60 * 24));
+  const hours = Math.floor((seconds % (60 * 60 * 24)) / (60 * 60));
+  const minutes = Math.floor((seconds % (60 * 60)) / 60);
+  const secs = seconds % 60;
+
+  document.getElementById('days').textContent = String(days).padStart(2, '0');
+  document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+  document.getElementById('seconds').textContent = String(secs).padStart(2, '0');
+}
 
   async function setupComments() {
     if (page !== 'chapter' || !window.supabase) return;
