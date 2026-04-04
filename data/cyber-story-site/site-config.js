@@ -21,10 +21,10 @@ window.SITE_CONFIG = {
     {
       id: 'chapter-1',
       number: 1,
-      title: 'RESTRICTED',
+      title: 'The Voidgate Institution',
       file: 'chapters/chapter-2.html',
       releaseDate: '2026-04-04T04:00:00Z',
-      excerpt: 'Locked until release.',
+      excerpt: 'A new prisoner is added to an already cramped cell',
       published: false
     },
     {
