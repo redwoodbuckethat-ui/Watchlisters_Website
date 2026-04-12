@@ -32,7 +32,7 @@ window.SITE_CONFIG = {
       number: 2,
       title: 'RESTRICTED',
       file: 'chapters/chapter-3.html',
-      releaseDate: '2026-04-11T04:00:00Z',
+      releaseDate: '2026-04-18T04:00:00Z',
       excerpt: 'Locked until release.',
       published: false
     }
